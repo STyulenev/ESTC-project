@@ -53,6 +53,8 @@
 #include "nrf_delay.h"
 #include "boards.h"
 
+void blink_led(const int led_num);
+
 /**
  * @brief Function for application main entry.
  */
@@ -64,12 +66,32 @@ int main(void)
     /* Toggle LEDs. */
     while (true)
     {
-        for (int i = 0; i < LEDS_NUMBER; i++)
+        for (int count = 0; count < 12; count++) 
         {
-            bsp_board_led_invert(i);
-            nrf_delay_ms(500);
+            blink_led(0);
+        }
+
+        for (int count = 0; count < 10; count++) 
+        {
+            blink_led(1);
+        }
+
+        for (int count = 0; count < 8; count++) 
+        {
+            blink_led(2);
+        }
+
+        for (int count = 0; count < 2; count++) 
+        {
+            blink_led(3);
         }
     }
+}
+
+void blink_led(const int led_num)
+{
+    bsp_board_led_invert(led_num);
+    nrf_delay_ms(500);
 }
 
 /**
