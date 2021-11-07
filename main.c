@@ -66,22 +66,24 @@ int main(void)
     /* Toggle LEDs. */
     while (true)
     {
-        for (int count = 0; count < 12; count++) 
+        int count;
+
+        for (count = 0; count < 12; ++count) 
         {
             blink_led(0);
         }
 
-        for (int count = 0; count < 10; count++) 
+        for (count = 0; count < 10; ++count) 
         {
             blink_led(1);
         }
 
-        for (int count = 0; count < 8; count++) 
+        for (count = 0; count < 8; ++count) 
         {
             blink_led(2);
         }
 
-        for (int count = 0; count < 2; count++) 
+        for (count = 0; count < 2; ++count) 
         {
             blink_led(3);
         }
